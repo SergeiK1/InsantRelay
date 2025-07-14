@@ -10,8 +10,11 @@ const Rick = () => {
 
   return (
     <div className="rick-container">
-      <h1 className="slogan">Your friends favorite possession, now yours!</h1>
-      <div className="image-container">
+      <div className="slogan">
+        <div className="slogan-line">Your friends favorite</div>
+        <div className="slogan-line">possession, now yours!</div>
+      </div>
+      <div className={`image-container ${isFlipped ? 'large' : ''}`}>
         <div 
           className={`flip-card ${isFlipped ? 'flipped' : ''}`}
           onClick={handleImageClick}

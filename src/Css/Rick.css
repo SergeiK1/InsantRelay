@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
 .rick-container {
   display: flex;
   flex-direction: column;
@@ -5,29 +7,43 @@
   align-items: center;
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #f4e4bc 0%, #e8d5b7 25%, #d4b896 50%, #c9a876 75%, #b8956b 100%);
+  background: url('../../public/sand.jpg') center center / cover no-repeat;
   padding: 2rem 0;
   margin: 0;
   position: relative;
 }
 
 .slogan {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 4.5rem;
+  font-weight: normal;
   color: #2c1810;
   text-align: center;
   margin-bottom: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-family: 'Arial', sans-serif;
-  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  font-family: 'Krona One', monospace;
+  letter-spacing: 3px;
   z-index: 10;
+  line-height: 0.8;
+}
+
+.slogan-line {
+  margin: -0.3rem 0;
+  display: block;
 }
 
 .image-container {
   perspective: 1000px;
-  width: 85vw;
-  height: 80vh;
-  max-width: 1200px;
+  width: 60vw;
+  height: 60vh;
+  max-width: 800px;
+  transition: all 0.6s ease;
+}
+
+/* Larger size when flipped to show team photo */
+.image-container.large {
+  width: 75vw;
+  height: 70vh;
+  max-width: 1000px;
 }
 
 .flip-card {
@@ -41,6 +57,10 @@
 
 .flip-card.flipped {
   transform: rotateY(180deg);
+}
+
+.flip-card.flipped:hover {
+  transform: rotateY(180deg) scale(1.05);
 }
 
 .flip-card-inner {
@@ -57,8 +77,9 @@
   height: 100%;
   backface-visibility: hidden;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
   overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
 .flip-card-back {
@@ -68,46 +89,148 @@
 .flip-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 15px;
   transition: transform 0.3s ease;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.flip-card:hover .flip-image {
+.flip-card:hover {
   transform: scale(1.05);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .slogan {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
+    font-size: 2.7rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    padding: 0 1rem;
+  }
+  
+  .slogan-line {
+    margin: -0.05rem 0;
   }
   
   .image-container {
-    width: 90vw;
-    height: 75vh;
+    width: 80vw;
+    height: calc(100vh - 200px);
+    max-height: 50vh;
+  }
+  
+  .image-container.large {
+    width: 85vw;
+    height: calc(100vh - 200px);
+    max-height: 55vh;
   }
   
   .rick-container {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 }
 
 @media (max-width: 480px) {
   .slogan {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.5px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    padding: 0 0.5rem;
+    line-height: 0.8;
+  }
+  
+  .slogan-line {
+    margin: -0.1rem 0;
   }
   
   .image-container {
-    width: 95vw;
-    height: 70vh;
+    width: 85vw;
+    height: calc(100vh - 150px);
+    max-height: 45vh;
+  }
+  
+  .image-container.large {
+    width: 90vw;
+    height: calc(100vh - 150px);
+    max-height: 50vh;
   }
   
   .rick-container {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
   }
+}
+
+@media (max-width: 360px) {
+  .slogan {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .slogan-line {
+    margin: -0.1rem 0;
+  }
+  
+  .image-container {
+    width: 90vw;
+    height: calc(100vh - 120px);
+    max-height: 40vh;
+  }
+  
+  .image-container.large {
+    width: 99vw;
+    height: calc(100vh - 120px);
+    max-height: 50vh;
+  }
+  
+  .rick-container {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .slogan {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .slogan-line {
+    margin: -0.3rem 0;
+  }
+  
+  .image-container {
+    width: 70vw;
+    height: calc(100vh - 80px);
+    max-height: 80vh;
+  }
+  
+  .rick-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+/* Ensure no horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+.rick-container {
+  overflow-x: hidden;
 }
