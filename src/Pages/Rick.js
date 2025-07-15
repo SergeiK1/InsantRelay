@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Css/Rick.css';
 
 const Rick = () => {
@@ -12,7 +13,9 @@ const Rick = () => {
     <div className="rick-container">
       <div className="slogan">
         <div className="slogan-line">Your friends favorite</div>
-        <div className="slogan-line">possession, now yours!</div>
+        <div className="slogan-line">
+          <Link to="/shop" className="possession-link">possession</Link>, now yours!
+        </div>
       </div>
       <div className={`image-container ${isFlipped ? 'large' : ''}`}>
         <div 

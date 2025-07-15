@@ -18,7 +18,7 @@
   font-weight: normal;
   color: #2c1810;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
   font-family: 'Krona One', monospace;
   letter-spacing: 3px;
@@ -27,8 +27,24 @@
 }
 
 .slogan-line {
-  margin: -0.3rem 0;
+  margin: -0.1rem 0;
   display: block;
+}
+
+.possession-link {
+  color: #2c1810;
+  text-decoration: none;
+  font-family: 'Krona One', monospace;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.possession-link:hover {
+  color: #8B4513;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .image-container {
@@ -104,13 +120,14 @@
 @media (max-width: 768px) {
   .slogan {
     font-size: 2.7rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: -3rem;
     letter-spacing: 2px;
     padding: 0 1rem;
   }
   
   .slogan-line {
-    margin: -0.05rem 0;
+    margin: 0.1rem 0;
   }
   
   .image-container {
@@ -137,14 +154,15 @@
 @media (max-width: 480px) {
   .slogan {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: -4rem;
     letter-spacing: 1px;
     padding: 0 0.5rem;
     line-height: 0.8;
   }
   
   .slogan-line {
-    margin: -0.1rem 0;
+    margin: 0.05rem 0;
   }
   
   .image-container {
@@ -171,12 +189,13 @@
 @media (max-width: 360px) {
   .slogan {
     font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+    margin-top: -5rem;
     letter-spacing: 0.5px;
   }
   
   .slogan-line {
-    margin: -0.1rem 0;
+    margin: 0.05rem 0;
   }
   
   .image-container {
