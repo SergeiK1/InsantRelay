@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../Css/Shop.css';
+import '../Css/Shop2.css';
 
-function Shop() {
+function Shop2() {
   // Generate array of "InsantRelay" words for background
   const backgroundWords = Array(200).fill('InsantRelay');
   const [clickCount, setClickCount] = useState(0);
@@ -49,4 +49,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default Shop2;
